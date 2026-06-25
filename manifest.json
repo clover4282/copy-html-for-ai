@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "HTML Copy Selector",
+  "version": "1.0.0",
+  "description": "우클릭한 요소의 HTML(outerHTML)을 클립보드로 복사해 AI에게 화면을 쉽게 설명할 수 있게 해줍니다.",
+  "permissions": ["contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
