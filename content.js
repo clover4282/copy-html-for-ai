@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((message) => {
 // Copy the picked element's metadata header (page/selector/element/position) to the clipboard —
 // just enough to point an AI at *which* element it is, without dumping its markup.
 function copyElement(target) {
-  const payload = buildHeader(target).trimEnd();
+  const payload = buildHeader(target).trimEnd() + "\n\n";
 
   copyToClipboard(payload)
     .then(() => {
